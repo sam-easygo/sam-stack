@@ -35,7 +35,7 @@ This copies each skill into `~/.agents/skills` (read by Codex) and symlinks it i
 These skills come from [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/92e38e2/skills) at commit `92e38e2`, under the MIT license in [`licenses/tstack-LICENSE`](licenses/tstack-LICENSE):
 
 - `leaving-pr-comments`: unchanged.
-- `babysit-pr`: changed to drop the Macroscope and CodeRabbit notes.
+- `babysit-pr`: changed to drop the Macroscope and CodeRabbit notes, and so `pr-wait` exits on PRs without CI or review bots.
 - `file-pr`: changed to write PR descriptions with `pr-description` and to run `sol-loop` first.
 - `sol-loop`: changed to run before any PR, at high effort in fast mode, and to not add a review note to the PR.
 - `full-stop`: merged with tstack's `full-send` into one skill, without permission to merge.

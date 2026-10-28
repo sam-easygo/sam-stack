@@ -48,10 +48,10 @@ It prints one line per real event. It exits 0 when the `--until` condition is
 met or the PR merges, 1 when it needs you (a required check failed, conflicts,
 unresolved threads, PR closed), and 2 on bad input.
 
-- `ready` (default): required checks green, Greptile or Macroscope reviewed the
-  head, and no unresolved threads. Use this to babysit.
-- `green`: required checks only. Use it when the repo has no Greptile or
-  Macroscope.
+- `ready` (default): required checks green, no unresolved threads, and
+  Greptile or Macroscope reviewed the head if either bot is on the PR. Use this
+  to babysit.
+- `green`: required checks only. A PR with no checks counts as green.
 - `any-change`: exit on the first event.
 
 In Claude Code, run it with the Monitor tool (`timeout_ms: 3600000`), so each
@@ -84,7 +84,8 @@ If a review bot leaves feedback you believe is not worth addressing, reply with
 a written reason and resolve the comment. Use the `leaving-pr-comments` skill
 for every comment posted on the user's behalf.
 
-Screenshots and videos help as well, when you have a way to upload them.
+Screenshots and videos help as well. Upload them with the
+`uploading-github-attachments` skill.
 
 Keep the PR at the size the user's goal needs. Review loops tend to grow a
 PR one cheap-looking fix at a time. Fix real bugs in the intended case.
