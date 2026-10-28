@@ -35,5 +35,6 @@ This copies each skill into `~/.agents/skills` (read by Codex) and symlinks it i
 These skills come from [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/92e38e2/skills) at commit `92e38e2`, under the MIT license in [`licenses/tstack-LICENSE`](licenses/tstack-LICENSE):
 
 - `babysit-pr`, `leaving-pr-comments`: unchanged.
-- `file-pr`, `sol-loop`: changed to write PR descriptions with `pr-description`.
+- `file-pr`: changed to write PR descriptions with `pr-description`.
+- `sol-loop`: changed to not add a review note to the PR.
 - `full-stop`: merged with tstack's `full-send` into one skill, without permission to merge.

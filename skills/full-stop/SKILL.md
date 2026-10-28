@@ -57,8 +57,7 @@ one appears.
 2. **Prove it.** Get proof for every change you made. See "Proof".
 3. **Get feedback.** Use the `sol-loop` skill to verify changes.
 4. **File the PR** with the `file-pr` skill. Rebase onto the latest default
-   branch first. In the Solution section, add one sentence that says how you
-   proved the change and that Sol approved it.
+   branch first. Put your proof in the Proof section of the description.
 5. **Babysit the PR** with the `babysit-pr` skill. Fix real findings and CI
    failures. Get proof for each fix before you push it.
 6. **Stop at the ready gate.** See "Ready gate".
