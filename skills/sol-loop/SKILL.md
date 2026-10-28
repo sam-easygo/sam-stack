@@ -108,10 +108,7 @@ or budget ends. Show both sides in 2-3 lines each. The user decides.
 Budget end is not approval.
 
 Do not push during the loop. Push after agreement only if the user asked
-to push, ship, or update the PR. If you push to a PR, say in one sentence in
-the Solution section of the description that Sol approved it, for example
-"Sol (<model>) approved it after <N> review rounds." Keep the rest of the
-`pr-description` format. Add the effort only if verified.
+to push, ship, or update the PR.
 
 Report: rounds, model, what Sol changed, diff size before/after, fixed and
 declined findings with reasons, usage if exposed (else say not), pushed or not.
