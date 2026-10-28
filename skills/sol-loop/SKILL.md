@@ -1,6 +1,6 @@
 ---
 name: sol-loop
-description: Use when the user says "sol loop".
+description: Use when the user says "sol loop", or before filing any PR.
 ---
 
 # sol-loop
@@ -46,7 +46,7 @@ missing or pre-failing checks in the brief.
 ## 2. Start Sol
 
 In T3, call `orchestrator_capabilities`. Pick the latest Sol unless the user
-named a version. Do not hardcode an ID. Record provider, model, and effort
+named a version. Use high effort and fast mode. Do not hardcode an ID. Record provider, model, and effort
 only if exposed. Use `delegate_task` every round (`role: "review"`,
 `mode: "async"`). Save `taskId`. New `clientRequestId` per round.
 `childThreadId` is storage, not the next target. Do not use

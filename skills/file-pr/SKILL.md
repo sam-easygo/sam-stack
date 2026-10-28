@@ -9,6 +9,8 @@ Before filing, check whether a PR for this branch already exists. Review the
 diff locally against the base branch (usually `origin/main`) to make sure its
 contents match the goal.
 
+Always ensure a `sol-loop` using the skill has been ran before filing a PR.
+
 PR titles usually become commit messages, so follow the repository's title
 conventions. Look at recently merged PRs and Git history for examples. Prefer a
 concise, human-readable title that explains why the change matters:

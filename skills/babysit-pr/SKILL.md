@@ -80,12 +80,6 @@ finding against the source before changing code. Fix real findings and CI
 failures, distinguish repository failures from infrastructure flakes, and reply
 with a written reason when dismissing false positives.
 
-If the repo has `.macroscope/check-run-agents/*.md`, read those rules before you
-reply to a Macroscope finding. Its findings cite them.
-
-CodeRabbit is advisory. Treat its findings like any other finding, but never
-wait for it and never hold a merge for it.
-
 If a review bot leaves feedback you believe is not worth addressing, reply with
 a written reason and resolve the comment. Use the `leaving-pr-comments` skill
 for every comment posted on the user's behalf.
