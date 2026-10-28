@@ -10,9 +10,9 @@ Progress and errors that do not end the run go to stderr.
 
 --until
   green       required checks passed on the current head (every CI check when
-              the base branch requires none)
-  ready      green, Greptile or Macroscope reviewed the current head, and no
-              review thread is unresolved (default)
+              the base branch requires none; a PR with no checks is green)
+  ready      green, Greptile or Macroscope reviewed the current head if either
+              bot is on the PR, and no review thread is unresolved (default)
   any-change  stop after the first poll that prints an event
 
 Exit codes
@@ -377,7 +377,9 @@ class Watcher:
                 fail_lines.append(f"{label} failed: {name} {link}")
                 self.emit(f"fail:{head}:{name}:{link}", fail_lines[-1])
         watched = {name: c for name, c in checks.items() if bot_name(name) not in ADVISORY_BOTS}
-        gate_done = bool(gate) and all(bucket(n) != "pending" for n in gate)
+        # An empty gate (a repo without CI) is done. The stable check below still
+        # waits two polls, so checks that register late are not skipped.
+        gate_done = all(bucket(n) != "pending" for n in gate)
         all_done = gate_done and all(c["bucket"] != "pending" for c in watched.values())
         # Checks appear a few seconds after a push. Two identical polls in a row
         # guard against calling a half-registered set of checks finished.
@@ -503,8 +505,10 @@ class Watcher:
             if green and self.until == "green":
                 self.reported.add(checks_key)
                 self.finish(0, [f"green on {short}: {summary}{self.behind(base, base_oid, head)}"])
-            # ready waits for Greptile or Macroscope, never for CodeRabbit.
-            if green and reviewed:
+            # ready waits for Greptile or Macroscope when either is on the PR,
+            # never for CodeRabbit.
+            gating_seen = any(bot in bot_status for bot in GATING_BOTS)
+            if green and (reviewed or not gating_seen):
                 if unresolved:
                     self.finish(1, [f"blocked by {len(unresolved)} unresolved threads on {short}: {' '.join(unresolved)}"])
                 if merge_state == "BEHIND":

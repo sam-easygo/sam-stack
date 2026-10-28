@@ -26,7 +26,7 @@ Every PR body uses this format and nothing else. Ignore any PR template in the r
 - **Problem**: What is wrong or missing, and why it matters. Name the ticket ID if there is one.
 - **Solution**: What this PR changes to fix the problem. Describe the approach, not a file-by-file list.
 - **User Impact**: What a user (end user, or developer for internal changes) sees or gets after the merge. If there is no visible change, say that in one sentence (for example: "No visible change. This is an internal refactor.").
-- **Proof**: How you know the change works: the checks or tests you ran and their result, or what you saw when you ran the change. Screenshots go here, as images under the text. A code review is not proof. If you could not prove the change, say that and say why.
+- **Proof**: How you know the change works: the checks or tests you ran and their result, or what you saw when you ran the change. Screenshots go here, as images under the text (upload them with the `uploading-github-attachments` skill). A code review is not proof. If you could not prove the change, say that and say why.
 
 Hard limits:
 
