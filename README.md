@@ -1,10 +1,10 @@
 # sam-stack
 
-Personal collection of Claude Code skills.
+Personal collection of agent skills, installed with [`npx skills`](https://github.com/vercel-labs/skills).
 
 ## Layout
 
-Each skill lives in its own folder under `skills/`:
+Each skill lives in its own folder under `skills/`. The folder name must match the `name` in the frontmatter.
 
 ```
 skills/
@@ -12,12 +12,20 @@ skills/
     SKILL.md
 ```
 
-## Install on a machine
+## Install
 
 ```sh
-git clone git@github.com:sam-easygo/sam-stack.git ~/dev/sam-stack
-mkdir -p ~/.claude/skills
-for d in ~/dev/sam-stack/skills/*/; do ln -sfn "$d" ~/.claude/skills/"$(basename "$d")"; done
+npx skills add git@github.com:sam-easygo/sam-stack.git -g -s '*' -a claude-code codex -y
 ```
 
-Run `git pull` in the repo to get updates. Re-run the loop after you add a new skill.
+This copies each skill into `~/.agents/skills` (read by Codex) and symlinks it into `~/.claude/skills` (read by Claude Code). The SSH URL is used because the repo is private.
+
+## Update
+
+| Change in this repo | Command                                                              |
+| ------------------- | -------------------------------------------------------------------- |
+| Edit a skill        | `npx skills update -g`                                               |
+| Add a skill         | Run the install command again. `update` does not pick up new skills. |
+| Remove a skill      | `npx skills update -g` without `-y`, then confirm the prompt.        |
+
+`update` only removes local copies after you confirm. With `-y`, or without a TTY, it lists the deleted skills and keeps them. To remove one by hand, run `npx skills remove -g <name> -y`.
