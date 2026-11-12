@@ -39,3 +39,7 @@ These skills come from [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/9
 - `file-pr`: changed to write PR descriptions with `pr-description` and to run `sol-loop` first.
 - `sol-loop`: changed to run before any PR, at high effort in fast mode, and to not add a review note to the PR.
 - `full-stop`: merged with tstack's `full-send` into one skill, without permission to merge.
+
+This skill comes from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd/tree/1ecea19/skills/i-have-adhd) at commit `1ecea19`, under the MIT license in [`licenses/i-have-adhd-LICENSE`](licenses/i-have-adhd-LICENSE):
+
+- `i-have-adhd`: unchanged. It runs only when you type `/i-have-adhd`, and stays on until you say "stop adhd mode".
