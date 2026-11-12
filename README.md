@@ -42,4 +42,4 @@ These skills come from [t3dotgg/tstack](https://github.com/t3dotgg/tstack/tree/9
 
 This skill comes from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd/tree/1ecea19/skills/i-have-adhd) at commit `1ecea19`, under the MIT license in [`licenses/i-have-adhd-LICENSE`](licenses/i-have-adhd-LICENSE):
 
-- `i-have-adhd`: unchanged. It runs only when you type `/i-have-adhd`, and stays on until you say "stop adhd mode".
+- `i-have-adhd`: changed so the agent starts it in every session without the `/i-have-adhd` command. It stays on until you say "stop adhd mode".
